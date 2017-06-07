@@ -19,7 +19,7 @@ peso 	= input('¿Cúanto pesas [kg]?\t: ')
 sexo	= input('¿Cúal es tu sexo [M/F]?\t: ')
 
 
-# Objeto perteneciente a la clase "paciente".-
+# Objeto perteneciente a la clase "Paciente".-
 # ===========================================
 paciente1 = Paciente(edad, estatura, peso, sexo)
 
@@ -58,5 +58,48 @@ while a == True:
 		sintomas_paciente.append('Decaimiento')
 	elif nuevo_sintoma == '7':
 		sintomas_paciente.append('Frio')
+	else:
+		print('Este número no es válido, por favor ingresa otro')
 
 
+
+# ASOCIACIÓN DE LOS SÍNTOMAS A LAS ENFERMEDADES INGRESADAS.-
+# =========================================================
+
+resfrio 	= 0
+jaqueca 	= 0
+gastroenteritis = 0
+
+for i in sintomas_paciente:
+	
+	if i == 'Dolor de cabeza':
+		resfrio += 1
+		jaqueca += 1
+
+	elif i == 'Mucosa':
+		resfrio += 1
+		jaqueca += 1
+
+	elif i == 'Dolor de estómago':
+		gastroenteritis += 1
+
+	elif i == 'Tos':
+		resfrio += 1
+
+	elif i == 'Indigestión':
+		gastroenteritis += 1
+
+	elif i == 'Decaimiento':
+		resfrio += 1
+
+	elif i == 'Frio':
+		resfrio += 1
+
+
+
+# RELACION CONTADOR ENFERMEDAD CON CANTIDAD DE SINTOMAS.-
+# ======================================================
+
+# Se establecio la relacion N/2+1 para determinar si se tiene la enfermedad o no, donde N representa la cantidad total de síntomas.
+
+  
