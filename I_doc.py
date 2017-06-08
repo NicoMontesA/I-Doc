@@ -1,15 +1,10 @@
 
-class Paciente:
-	"""Crea la clase paciente con sus atributos"""
-	
-	def __init__(self, edad, estatura, peso, sexo):
-		self.edad = edad
-		self.estatura = estatura
-		self.peso = peso
-		self.sexo = sexo
+# El módulo "Enfermedades" contiene las clases con las posibles enfermedades y su tratamiento.
+import Enfermedades as enf
 
 
 print('\nHola, soy I-Doc!\n')
+
 
 # Datos para crear el objeto paciente.-
 # ====================================
@@ -18,10 +13,6 @@ estatura= input('¿Cúanto mides [mts]?\t: ')
 peso 	= input('¿Cúanto pesas [kg]?\t: ')
 sexo	= input('¿Cúal es tu sexo [M/F]?\t: ')
 
-
-# Objeto perteneciente a la clase "Paciente".-
-# ===========================================
-paciente1 = Paciente(edad, estatura, peso, sexo)
 
 
 # Recopilación de los síntomas.-
@@ -95,11 +86,33 @@ for i in sintomas_paciente:
 	elif i == 'Frio':
 		resfrio += 1
 
+# ===========================================================================
+# PARA PRUEBA, DESPUES BORRAR ESTO
+print('resfrio 		=', resfrio)
+print('jaqueca 		=', jaqueca)
+print('gastroenteritis 	=', gastroenteritis)
 
 
 # RELACION CONTADOR ENFERMEDAD CON CANTIDAD DE SINTOMAS.-
 # ======================================================
 
-# Se establecio la relacion N/2+1 para determinar si se tiene la enfermedad o no, donde N representa la cantidad total de síntomas.
+if resfrio > jaqueca & resfrio > gastroenteritis:
+	# Caso cuando el paciente se encuentra resfriado.
+	paciente = enf.Resfrio(edad,estatura,peso,sexo)
+	paciente.tratamiento()
+	print('Paciente de la clase Resfrio')
 
-  
+elif jaqueca > resfrio & jaqueca > gastroenteritis:
+	# Caso cuando el paciente se encuentra con jaqueca.
+	paciente = enf.Jaqueca(edad,estatura,peso,sexo)
+	paciente.tratamiento()
+	print('Paciente de la clase Jaqueca')
+
+elif gastroenteritis > resfrio & gastroenteritis > jaqueca:
+	# Caso cuando el paciente se encuentra con gastroenteritis.
+	paciente = enf.Gastroenteritis(edad,estatura,peso,sexo) 
+	paciente.tratamiento()
+	print('Paciente de la clase Gastroenteritis')
+else:
+	print('Su enfermedad parece grave, porfavor diríjase a Urgencias')
+
