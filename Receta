@@ -1,0 +1,244 @@
+Last login: Mon Jun 12 12:22:30 on ttys000
+MBP-de-Carolina:~ carolinapazcuadralopez$ cd Escritorio
+-bash: cd: Escritorio: No such file or directory
+MBP-de-Carolina:~ carolinapazcuadralopez$ cd escritorio
+-bash: cd: escritorio: No such file or directory
+MBP-de-Carolina:~ carolinapazcuadralopez$ ls
+Applications			Music
+Desktop				Pictures
+Documents			Public
+Downloads			VirtualBox VMs
+Google Drive			matlab_crash_dump.265-1
+Library				matlab_crash_dump.4988-1
+Movies
+MBP-de-Carolina:~ carolinapazcuadralopez$ cd Desktop
+MBP-de-Carolina:Desktop carolinapazcuadralopez$ cd Sexto
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ ls
+ANÁLISIS SISTEMAS DE RADAR	Optrónica
+DSP				P2_Tarea1.m
+Fotos curso			Problema_2.m
+Ing. Software			Redes
+LIDERAZGO			Tansmision de Datos
+Máquinas Eléctricas
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ cd Ing. Software
+-bash: cd: Ing.: No such file or directory
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ cd Software
+-bash: cd: Software: No such file or directory
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ cd Ing.Software
+-bash: cd: Ing.Software: No such file or directory
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ ls
+ANÁLISIS SISTEMAS DE RADAR	Optrónica
+DSP				P2_Tarea1.m
+Fotos curso			Problema_2.m
+Ing. Software			Redes
+LIDERAZGO			Tansmision de Datos
+Máquinas Eléctricas
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ cd Ing. Software
+-bash: cd: Ing.: No such file or directory
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ ls
+ANÁLISIS SISTEMAS DE RADAR	Optrónica
+DSP				P2_Tarea1.m
+Fotos curso			Problema_2.m
+Ing. Software			Redes
+LIDERAZGO			Tansmision de Datos
+Máquinas Eléctricas
+MBP-de-Carolina:Sexto carolinapazcuadralopez$ cd Ing.Software
+MBP-de-Carolina:Ing.Software carolinapazcuadralopez$ ls
+Doc
+Ejemplos Python
+Ing. Software Capitulos 5-6-7-8.pdf
+Ingenieria-de-Software-Ian-Somerville-9-.pdf
+Python para todos.pdf
+Software_Engineering_9_Solutions_Manual (1).pdf
+MBP-de-Carolina:Ing.Software carolinapazcuadralopez$ cd Doc
+MBP-de-Carolina:Doc carolinapazcuadralopez$ cd I-Doc
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ ls
+I_doc.py	Prueba_I-Doc.py	README.md	fot_doc.jpeg
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ git pull
+remote: Counting objects: 19, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 19 (delta 5), reused 18 (delta 4), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+From https://github.com/Nicolas214/I-Doc
+   ff6d63d..785a3e2  master     -> origin/master
+Updating ff6d63d..785a3e2
+Fast-forward
+ Enfermedades.py                         |  84 ++++++++++++++++++++
+ I_doc.py                                | 133 +++++++++++++++++++++++++++++---
+ Prueba_I-Doc                            |  10 ---
+ Prueba_I-Doc.py                         |   8 --
+ __pycache__/Enfermedades.cpython-36.pyc | Bin 0 -> 2431 bytes
+ 5 files changed, 207 insertions(+), 28 deletions(-)
+ create mode 100644 Enfermedades.py
+ delete mode 100644 Prueba_I-Doc
+ delete mode 100644 Prueba_I-Doc.py
+ create mode 100644 __pycache__/Enfermedades.cpython-36.pyc
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Documento1.pdf
+	fot_doc.jpeg
+
+nothing added to commit but untracked files present (use "git add" to track)
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ python3
+Python 3.6.1 (v3.6.1:69c0db5050, Mar 21 2017, 01:21:04) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> easy_install reportlab
+  File "<stdin>", line 1
+    easy_install reportlab
+                         ^
+SyntaxError: invalid syntax
+>>> pip install reportlab
+  File "<stdin>", line 1
+    pip install reportlab
+              ^
+SyntaxError: invalid syntax
+>>> qui()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'qui' is not defined
+>>> quit()
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ easy_install reportlab
+error: can't create or remove files in install directory
+
+The following error occurred while trying to add or remove files in the
+installation directory:
+
+    [Errno 13] Permission denied: '/Library/Python/2.7/site-packages/test-easy-install-2134.pth'
+
+The installation directory you specified (via --install-dir, --prefix, or
+the distutils default setting) was:
+
+    /Library/Python/2.7/site-packages/
+
+Perhaps your account does not have write access to this directory?  If the
+installation directory is a system-owned directory, you may need to sign in
+as the administrator or "root" account.  If you do not have administrative
+access to this machine, you may wish to choose a different installation
+directory, preferably one that is listed in your PYTHONPATH environment
+variable.
+
+For information on other options, you may wish to consult the
+documentation at:
+
+  https://pythonhosted.org/setuptools/easy_install.html
+
+Please make the appropriate changes for your system and try again.
+
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ pip install reportlab
+Collecting reportlab
+  Downloading reportlab-3.4.0.tar.gz (2.0MB)
+    100% |████████████████████████████████| 2.0MB 400kB/s 
+Collecting pillow>=2.4.0 (from reportlab)
+  Downloading Pillow-4.1.1-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (3.5MB)
+    100% |████████████████████████████████| 3.5MB 90kB/s 
+Requirement already satisfied: pip>=1.4.1 in /Library/Python/2.7/site-packages/pip-9.0.1-py2.7.egg (from reportlab)
+Requirement already satisfied: setuptools>=2.2 in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from reportlab)
+Collecting olefile (from pillow>=2.4.0->reportlab)
+  Downloading olefile-0.44.zip (74kB)
+    100% |████████████████████████████████| 81kB 162kB/s 
+Installing collected packages: olefile, pillow, reportlab
+  Running setup.py install for olefile ... error
+    Complete output from command /usr/bin/python -u -c "import setuptools, tokenize;__file__='/private/var/folders/6k/vdy77gpn1k7csfwr864cn8lw0000gn/T/pip-build-zEw9C1/olefile/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/6k/vdy77gpn1k7csfwr864cn8lw0000gn/T/pip-rFiuhp-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build/lib
+    copying OleFileIO_PL.py -> build/lib
+    creating build/lib/olefile
+    copying olefile/__init__.py -> build/lib/olefile
+    copying olefile/olefile.py -> build/lib/olefile
+    copying olefile/README.rst -> build/lib/olefile
+    copying olefile/README.html -> build/lib/olefile
+    copying olefile/LICENSE.txt -> build/lib/olefile
+    copying olefile/CONTRIBUTORS.txt -> build/lib/olefile
+    running install_lib
+    creating /Library/Python/2.7/site-packages/olefile
+    error: could not create '/Library/Python/2.7/site-packages/olefile': Permission denied
+    
+    ----------------------------------------
+Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/private/var/folders/6k/vdy77gpn1k7csfwr864cn8lw0000gn/T/pip-build-zEw9C1/olefile/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /var/folders/6k/vdy77gpn1k7csfwr864cn8lw0000gn/T/pip-rFiuhp-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /private/var/folders/6k/vdy77gpn1k7csfwr864cn8lw0000gn/T/pip-build-zEw9C1/olefile/
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user]
+            [command]
+usage: sudo [-AbEHknPS] [-C num] [-g group] [-h host] [-p prompt] [-u user]
+            [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-C num] [-g group] [-h host] [-p prompt] [-u user] file
+            ...
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ sudo pip install reportlab
+Password:
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting reportlab
+  Downloading reportlab-3.4.0.tar.gz (2.0MB)
+    100% |████████████████████████████████| 2.0MB 174kB/s 
+Collecting pillow>=2.4.0 (from reportlab)
+  Downloading Pillow-4.1.1-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (3.5MB)
+    100% |████████████████████████████████| 3.5MB 142kB/s 
+Requirement already satisfied: pip>=1.4.1 in /Library/Python/2.7/site-packages/pip-9.0.1-py2.7.egg (from reportlab)
+Requirement already satisfied: setuptools>=2.2 in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from reportlab)
+Collecting olefile (from pillow>=2.4.0->reportlab)
+  Downloading olefile-0.44.zip (74kB)
+    100% |████████████████████████████████| 81kB 46kB/s 
+Installing collected packages: olefile, pillow, reportlab
+  Running setup.py install for olefile ... done
+  Running setup.py install for reportlab ... done
+Successfully installed olefile-0.44 pillow-4.1.1 reportlab-3.4.0
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ clang
+clang: error: no input files
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ pip install pillow
+Requirement already satisfied: pillow in /Library/Python/2.7/site-packages
+Requirement already satisfied: olefile in /Library/Python/2.7/site-packages (from pillow)
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ sudo pip install pillow
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Requirement already satisfied: pillow in /Library/Python/2.7/site-packages
+Requirement already satisfied: olefile in /Library/Python/2.7/site-packages (from pillow)
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ sudo pip install pillow
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Requirement already satisfied: pillow in /Library/Python/2.7/site-packages
+Requirement already satisfied: olefile in /Library/Python/2.7/site-packages (from pillow)
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ quit()
+> 
+> 
+> ls
+-bash: syntax error near unexpected token `ls'
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ sudo pip install pillow
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/Users/carolinapazcuadralopez/Library/Caches/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Requirement already satisfied: pillow in /Library/Python/2.7/site-packages
+Requirement already satisfied: olefile in /Library/Python/2.7/site-packages (from pillow)
+MBP-de-Carolina:I-Doc carolinapazcuadralopez$ vim
+
+#Uso de la libreria Reportlab para la creación de PDF, de acuerdo a la
+# enfermedad detectada
+
+from reportlab.pdfgen import canvas
+
+aux = canvas.Canvas("Receta.pdf")
+
+aux.drawImage("d:\\python\\pdf\\Logo.I-Doc.jpg",50,200,600,600)
+aux.drawString(50,200,"EJEMPLO DE INSERCION DE IMAGEN EN PDF")
+
+aux.showPage() 
+aux.save()
+
+
+
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+recording
