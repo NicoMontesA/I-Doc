@@ -7,7 +7,8 @@ class Resfrio:
 	"""Clase cuando el paciente se encuentra resfriado"""
 	
 	# DATOS DEL PACIENTE.-
-	def __init__(self, edad, estatura, peso, sexo):
+	def __init__(self, nombre, edad, estatura, peso, sexo):
+		self.nombre   = nombre
 		self.edad     = edad
 		self.estatura = estatura
 		self.peso     = peso
@@ -34,7 +35,8 @@ class Jaqueca:
 	"""Clase cuando el paciente se encuentra con jaqueca"""
 	
 	# DATOS DEL PACIENTE.-
-	def __init__(self, edad, estatura, peso, sexo):
+	def __init__(self, nombre, edad, estatura, peso, sexo):
+		self.nombre   = nombre
 		self.edad     = edad
 		self.estatura = estatura
 		self.peso     = peso
@@ -63,7 +65,8 @@ class Gastroenteritis:
 	"""Clase cuando el paciente se encuentra con gastroenteritis"""
 	
 	# DATOS DEL PACIENTE.-
-	def __init__(self, edad, estatura, peso, sexo):
+	def __init__(self, nombre, edad, estatura, peso, sexo):
+		self.nombre   = nombre
 		self.edad     = edad
 		self.estatura = estatura
 		self.peso     = peso
@@ -80,5 +83,6 @@ class Gastroenteritis:
 	# CATEGORÍA MÉDICA EN LA QUE QUEDA EL PACIENTE.-
 	def categoria(self):
 		self.categoria = 1
+		self.dias      = 'Indefinido'
 
 

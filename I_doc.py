@@ -8,6 +8,7 @@ print('\nHola, soy I-Doc!\n')
 
 # Datos para crear el objeto paciente.-
 # ====================================
+nombre  = input('¿Cúal es tu nombre?\t:')
 edad 	= input('¿Cúantos años tienes?\t: ')
 estatura= input('¿Cúanto mides [mts]?\t: ')
 peso 	= input('¿Cúanto pesas [kg]?\t: ')
@@ -104,7 +105,7 @@ print('gastroenteritis 	=', gastroenteritis)
 
 if resfrio > jaqueca and resfrio > gastroenteritis:
 	# Caso cuando el paciente se encuentra resfriado.
-	paciente = enf.Resfrio(edad,estatura,peso,sexo)
+	paciente = enf.Resfrio(nombre,edad,estatura,peso,sexo)
 	paciente.tratamiento()
 # ===========================================================================
 # BORRAR ESTE Y LOS SIGUIENTES "print", ESTÁN PARA VERIFICAR QUE LA CLASE SE INICIE DE MANERA CORRECTA.
@@ -113,13 +114,13 @@ if resfrio > jaqueca and resfrio > gastroenteritis:
 
 elif jaqueca > resfrio and jaqueca > gastroenteritis:
 	# Caso cuando el paciente se encuentra con jaqueca.
-	paciente = enf.Jaqueca(edad,estatura,peso,sexo)
+	paciente = enf.Jaqueca(nombre,edad,estatura,peso,sexo)
 	paciente.tratamiento()
 	print('Paciente de la clase Jaqueca')
 
 elif gastroenteritis > resfrio and gastroenteritis > jaqueca:
 	# Caso cuando el paciente se encuentra con gastroenteritis.
-	paciente = enf.Gastroenteritis(edad,estatura,peso,sexo) 
+	paciente = enf.Gastroenteritis(nombre,edad,estatura,peso,sexo) 
 	paciente.tratamiento()
 	print('Paciente de la clase Gastroenteritis')
 
