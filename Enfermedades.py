@@ -18,14 +18,15 @@ class Resfrio:
 	def tratamiento(self):
 		medicamento = 'Aspirina'
 		# La dosis del medicamento es la estatura dividida el peso del paciente.
-		dosis	    = float(self.peso)/float(self.estatura)
-		dosis       = round(dosis)
+		dosis		= float(self.peso)/float(self.estatura)
+		dosis     	= round(dosis)
 		print('Tome',dosis,'[mg] de', medicamento,'.') 
 
 	# CATEGORÍA MÉDICA EN LA QUE QUEDA EL PACIENTE.-
 	def categoria(self):
-		self.categoria = 3
-		self.dias      = 4	
+		categoria = '3'
+		dias      = '4'	
+		print(categoria,'por',dias,'días')
 
 
 
@@ -48,12 +49,15 @@ class Jaqueca:
 		# La dosis del medicamento es la estatura dividida el peso del paciente.
 		dosis	    = float(self.peso)/float(self.estatura)
 		dosis       = round(dosis)
-		print('Tome',dosis,'[mg] de', medicamento,'.') 
+		print('Tome',dosis,'[mg] de', medicamento) 
 
 	# CATEGORÍA MÉDICA EN LA QUE QUEDA EL PACIENTE.-
 	def categoria(self):
-		self.categoria = 3
-		self.dias      = 1	
+		categoria = '3'
+		dias      = '1'	
+		print(categoria, 'por', dias, 'días')
+
+
 
 
 
@@ -78,11 +82,11 @@ class Gastroenteritis:
 		# La dosis del medicamento es la estatura dividida el peso del paciente.
 		dosis	    = float(self.peso)/float(self.estatura)
 		dosis       = round(dosis)
-		print('Tome',dosis,'[mg] de', medicamento,'.') 
+		print('Tome',dosis,'[mg] de',medicamento) 
 
 	# CATEGORÍA MÉDICA EN LA QUE QUEDA EL PACIENTE.-
 	def categoria(self):
-		self.categoria = 1
-		self.dias      = 'Indefinido'
-
+		categoria = '1'
+		dias      = 'Indefinido'
+		print(categoria,'por',dias,'días')
 

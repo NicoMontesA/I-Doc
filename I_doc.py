@@ -8,7 +8,7 @@ print('\nHola, soy I-Doc!\n')
 
 # Datos para crear el objeto paciente.-
 # ====================================
-nombre  = input('¿Cúal es tu nombre?\t:')
+nombre  = input('¿Cúal es tu nombre?\t: ')
 edad 	= input('¿Cúantos años tienes?\t: ')
 estatura= input('¿Cúanto mides [mts]?\t: ')
 peso 	= input('¿Cúanto pesas [kg]?\t: ')
@@ -92,10 +92,11 @@ for i in sintomas_paciente:
 
 # ===========================================================================
 # PARA PRUEBA, DESPUES BORRAR ESTO
-print('resfrio 		=', resfrio)
-print('jaqueca 		=', jaqueca)
-print('gastroenteritis 	=', gastroenteritis)
+#print('resfrio 		=', resfrio)
+#print('jaqueca 		=', jaqueca)
+#print('gastroenteritis 	=', gastroenteritis)
 # ===========================================================================
+
 
 
 # RELACION CONTADOR ENFERMEDAD CON CANTIDAD DE SINTOMAS.-
@@ -127,4 +128,5 @@ elif gastroenteritis > resfrio and gastroenteritis > jaqueca:
 else:
 	# Caso cuando el paciente se encuentra con múltiples síntomas y no se pudo determinar con certeza a qué enfermeda específica corresponde.
 	print('\nSu enfermedad parece grave, por favor diríjase a Urgencias.\n')
+
 
