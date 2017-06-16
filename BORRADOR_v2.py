@@ -79,24 +79,31 @@ class Recepcion_Datos(QWidget):
 		self.setWindowTitle("I-Doc")
 
 		# Mensaje de saludo inicial.-
-		QMessageBox.information(self, "Empty Field", "Hola, soy I-Doc, estaré encantado de ayudarte.")
+		QMessageBox.information(self, "Empty Field", "Hola, soy I-Doc 👨‍🔬 \n\nEstaré encantado de ayudarte!")
 
 
 
 	def submitContact(self):
 		ventana2.show()
 		self.nombre 	= self.nameLine.text()
+		self.nombre 	= self.nombre.strip()		# Corrije la entrada de espacios antes y despues del nombre.
+
 		self.edad 	= self.ageLine.text()
+		self.edad 	= self.edad.strip()
+
 		self.estatura	= self.heightLine.text()
+		self.estatura 	= self.estatura.replace(',','.') # Corrije la entrada anterior si se ingresó un punto en vez de una coma.
+		self.estatura 	= self.estatura.strip()
+
 		self.peso 	= self.weightLine.text()
+		self.peso 	= self.peso.strip()
+
 		self.sexo 	= self.sexLine.text()
+		self.sexo 	= self.sexo.strip()
 
 		if self.nombre == "" or self.edad == "" or self.estatura == "" or self.peso == "" or self.sexo == "":
 			QMessageBox.information(self, "Empty Field",
                                     "Por favor, revise que haya llenado todos los acápites para poder continuar.")
-	#	else:
-	#		QMessageBox.information(self, "Success!","Hello %s!" % self.nombre)
-
 
 
 
@@ -116,14 +123,12 @@ class Recepcion_Sintomas(QWidget):
 		# El constructor por defecto no tiene "parent", por lo tanto se crea uno.
 		super(Recepcion_Sintomas, self).__init__(parent)
 		
-		etiquetaSaludo = QLabel('Por favor lee los siguientes síntomas y dime cuales son los tuyos, para ello ingresa un número y luego presiona la tecla "enter".\nRealiza lo anterior cuantas veces sea necesario. Cuando hayas terminado ingresa "0":')
+		etiquetaSaludo = QLabel('Por favor lee los siguientes síntomas y dime cuales son los tuyos, para ello anota los números separados por una \",\".\nCuando hayas terminado presiona el botón \"Guardar\"')
 
 		etiquetaSintoma = QLabel("Síntomas:")		# Etiqueta.
 
-		posiblesSintomas = QLabel("1.Dolor de cabeza.\t2.Mucosa.\n3.Dolor de estómago.\t4.Tos.\n5.Indigestión.\t\t6.Decaimiento.\n7.Frio.\n""")
+		posiblesSintomas = QLabel("1.Dolor de cabeza.\t2.Mucosa.\n3.Dolor de estómago.\t4.Tos.\n5.Indigestión.\t\t6.Decaimiento.\n7.Frio.\n""")		
 
-		etiquetaSaludo = QLabel('Por favor lee los siguientes síntomas y dime cuales son los tuyos, para ello ingresa un número y luego presiona la tecla "enter".\nRealiza lo anterior cuantas veces sea necesario. Cuando hayas terminado ingresa "0":')
-		
 		self.ingresoSintomas = QLineEdit()		# Caja para recibir los síntomas.
 
 		self.guardarSintomas = QPushButton("Guardar")	# Boton para guardar los síntomas.  
@@ -139,27 +144,15 @@ class Recepcion_Sintomas(QWidget):
 	
 		# Elementos que componen "etiquetaSintoma"
 		buttonLayout1.addWidget(etiquetaSintoma)			
-		#buttonLayout1.addWidget(self.nameLine)
-		#buttonLayout1.addWidget(self.submitButton)
 
 		# Elementos que componen "posiblesSintomas"
 		buttonLayout1.addWidget(posiblesSintomas)
-	#	buttonLayout1.addWidget(self.ageLine)
-		#buttonLayout1.addWidget(self.submitButton2)
 
 		# Elementos que componen "etiquedaSaludo"
 		buttonLayout1.addWidget(etiquetaSaludo)
-	#	buttonLayout1.addWidget(self.heightLine)
-		#buttonLayout1.addWidget(self.submitButton3)
 
 		# Elementos que componen "ingresoSintomas"
 		buttonLayout1.addWidget(self.ingresoSintomas)
-	#	buttonLayout1.addWidget(self.weightLine)
-		#buttonLayout1.addWidget(self.submitButton4)
-
-		# Elementos que componen "sexLabel"
-	#	buttonLayout1.addWidget(sexLabel)
-	#	buttonLayout1.addWidget(self.sexLine)
 
         	# Se crea el botón
 		buttonLayout1.addWidget(self.guardarSintomas)
@@ -184,9 +177,18 @@ class Recepcion_Sintomas(QWidget):
 	def submitContact(self):
 		# "sintmasString" lee lo que se encuentra en la caja "self.ingresoSintomas" y lo transforma en un strng.
 		sintomasString = self.ingresoSintomas.text()
+		sintomasString = sintomasString.replace(' ','') # Solución en caso que hayan agregado un espacio entre o despues de los numeros.
+		sintomasString = sintomasString.strip(',') 	# Solución en caso que hayan comas al inicio o al final del string.
+
 
 		# "sintomasList" transforma "sintomasString" en una lista con los argumentos.
 		sintomas_paciente = sintomasString.split(',')
+		
+		for i in sintomas_paciente:
+			while sintomas_paciente.count(i) > 1:
+				sintomas_paciente.remove(i)
+				
+
 
 		# ===================================================================================
 		# ESTO ES PARA VERIFICARLO POR EL TERMINAL, BORRAR LUEGO
@@ -276,7 +278,7 @@ class Recepcion_Sintomas(QWidget):
 
 		elif verificador == 0:
 			# Caso cuando el paciente se encuentra con múltiples síntomas y no se pudo determinar con certeza a qué enfermeda específica corresponde.
-			QMessageBox.information(self, "Success", "Usted tiene JAQUECA, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
+			QMessageBox.information(self, "Success", "Su caso parece grave. ☠️\n\nPor favor valla al hospital más cercano!")                                              
 			print('\nNo se asignó a una clase, contadores iguales.\n')
 
 		
@@ -285,6 +287,9 @@ class Recepcion_Sintomas(QWidget):
 
 
 
+
+# EJECUCIÓN DEL CÓDIGO.-
+# ======================
 
 if __name__ == '__main__':
     import sys
