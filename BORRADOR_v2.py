@@ -278,7 +278,7 @@ class Recepcion_Sintomas(QWidget):
 
 		elif verificador == 0:
 			# Caso cuando el paciente se encuentra con múltiples síntomas y no se pudo determinar con certeza a qué enfermeda específica corresponde.
-			QMessageBox.information(self, "Success", "Su caso parece grave. ☠️\n\nPor favor valla al hospital más cercano!")                                              
+			QMessageBox.information(self, "Success", "Su caso parece grave. ☠️\n\nPor favor vaya al hospital más cercano!")                                              
 			print('\nNo se asignó a una clase, contadores iguales.\n')
 
 		
