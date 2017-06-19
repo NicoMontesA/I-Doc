@@ -43,11 +43,11 @@ class Jaqueca:
 		self.estatura = estatura
 		self.peso     = peso
 		self.sexo     = sexo	
-                self.enfermedad = 'Jaqueca'
+		self.enfermedad = 'Jaqueca'
 
 	# TRATAMIENTO A SEGUIR.-
 	def tratamiento(self):
-	        self.medicamento = 'Tapsin'  
+		self.medicamento = 'Tapsin'  
 		# La dosis del medicamento es la estatura dividida el peso del paciente.
 		self.dosis	 = float(self.peso)/float(self.estatura)
 		self.dosis       = round(self.dosis)
@@ -73,7 +73,7 @@ class Gastroenteritis:
 		self.estatura = estatura
 		self.peso     = peso
 		self.sexo     = sexo
-                self.enfermedad = 'Gastroenteritis'
+		self.enfermedad = 'Gastroenteritis'
 
 	# TRATAMIENTO A SEGUIR.-
 	def tratamiento(self):
