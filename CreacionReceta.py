@@ -14,23 +14,22 @@ from reportlab.lib.units import cm
 
 #=======VARIABLES OBTENIDAS DESDE EL MODULO ENFERMEDADES=======
 
-
+#Datos de prueba:
 #self_nombre = "Carolina"
 #self_edad = "27"
 #self_estatura = "1.68"
-#self_peso = "63"
+#self_peso = "61"
 #self_sexo = "F"
 
 #=====NOMBRE DEL ARCHIVO PDF A CREAR Y TAMAÑO DE LA HOJA======
 
 #self_nombre = ventana1.nombre
 
-Nombre_Archivo  = "Receta" + ".pdf"
 
+def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo,enfermedad,medicamento,dosis,categoria,dias):
 
-def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo):
     'Generacion_Receta es la función que crea un PDF con una receta de acuerdo a la enfermedad detectada y con los datos ingresados por el paciente'
-
+    Nombre_Archivo  = "Receta" + self_nombre + ".pdf"
     c = canvas.Canvas(Nombre_Archivo,pagesize=letter)
     width, height = letter
 
@@ -91,7 +90,7 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
     #Color de la letra
     c.setFillColor(gray)
     # Texto
-    c.drawString(100,620, self_peso + " " + "mts.")
+    c.drawString(100,620, self_peso + " " + "Kgs.")
     #Color de la letra
     c.setFillColor(black)
     # Texto
@@ -121,8 +120,26 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
 
     # Texto
     c.drawString(50,530,"Diagnóstico:")
+     #Color de la letra
+    c.setFillColor(blue)
+    # Texto
+    c.drawString(140,530,enfermedad)
+     #Color de la letra
+    c.setFillColor(black)
+    # Texto
     c.drawString(50,460,"Tratamiento:")
+     #Color de la letra
+    c.setFillColor(blue)
+    # Texto
+    c.drawString(140,460,'Tomar' + dosis '[mg] de' + medicamento)
+    #Color de la letra
+    c.setFillColor(black)
+    # Texto
     c.drawString(50,390,"Licencia Médica:")
+    #Color de la letra
+    c.setFillColor(blue)
+    # Texto
+    c.drawString(140,390,categoria + 'por' + dias)
 
     #Lineas de separacion
     c.line(10,330,550,330)
@@ -131,6 +148,8 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
 #=============FIRMA Y FECHA======================================
 
     #Insertar fecha y hora de generacion de la receta
+     #Color de la letra
+    c.setFillColor(black)
     actual = datetime.datetime.today()
     fecha = actual.strftime("%h %d %Y %H:%M:%S")
     textobject = c.beginText()
@@ -152,4 +171,4 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
 #Guarda el archivo PDF generado
     c.save()          
 
-#Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo, Nombre_Archivo)
+#Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo)

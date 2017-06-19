@@ -12,21 +12,22 @@ class Resfrio:
 		self.edad     = edad
 		self.estatura = estatura
 		self.peso     = peso
-		self.sexo     = sexo	
+		self.sexo     = sexo
+                self.enfermedad = 'Resfrio'
 
 	# TRATAMIENTO A SEGUIR.-
 	def tratamiento(self):
-		medicamento = 'Aspirina'
+		self.medicamento = 'Aspirina'
 		# La dosis del medicamento es la estatura dividida el peso del paciente.
-		dosis		= float(self.peso)/float(self.estatura)
-		dosis     	= round(dosis)
-		print('Tome',dosis,'[mg] de', medicamento,'.') 
+		self.dosis	= float(self.peso)/float(self.estatura)
+		self.dosis     	= round(dosis)
+		print('Tome',self.dosis,'[mg] de', self.medicamento,'.') 
 
 	# CATEGORÍA MÉDICA EN LA QUE QUEDA EL PACIENTE.-
 	def categoria(self):
-		categoria = '3'
-		dias      = '4'	
-		print(categoria,'por',dias,'días')
+		self.categoria = '3'
+		self.dias      = '4'	
+		print(self.categoria,'por',self.dias,'días')
 
 
 
