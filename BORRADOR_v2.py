@@ -261,6 +261,7 @@ class Recepcion_Sintomas(QWidget):
 		if resfrio > jaqueca and resfrio > gastroenteritis and verificador == 0:
 			# Caso cuando el paciente se encuentra resfriado.
 			paciente = enf.Resfrio(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
+
 			paciente.tratamiento()
 			paciente.categoria()
 
@@ -275,9 +276,12 @@ class Recepcion_Sintomas(QWidget):
 		elif jaqueca > resfrio and jaqueca > gastroenteritis and verificador == 0:
 			# Caso cuando el paciente se encuentra con jaqueca.
 			paciente = enf.Jaqueca(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
+
                         #Llama a la funcion Generacion_Receta del modulo CreacionReceta 
-			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
 			paciente.tratamiento()
+			paciente.categoria()
+
+			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo,paciente.enfermedad,paciente.medicamento,paciente.dosis,paciente.categoria,paciente.dias)
 
 			QMessageBox.information(self, "Success", "Usted tiene JAQUECA, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 			print('Paciente de la clase Jaqueca')
@@ -285,8 +289,11 @@ class Recepcion_Sintomas(QWidget):
 		elif gastroenteritis > resfrio and gastroenteritis > jaqueca and verificador == 0:
 			# Caso cuando el paciente se encuentra con gastroenteritis.
 			paciente = enf.Gastroenteritis(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
+			
+                        paciente.tratamiento()
+			paciente.categoria()
+
 			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo,paciente.enfermedad,paciente.medicamento,paciente.dosis,paciente.categoria,paciente.dias)
-			paciente.tratamiento()
 			QMessageBox.information(self, "Success", "Usted tiene GASTROENTERITIS, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 
 		elif verificador == 0:

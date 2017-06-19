@@ -123,7 +123,7 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
      #Color de la letra
     c.setFillColor(blue)
     # Texto
-    c.drawString(140,530,enfermedad)
+    c.drawString(170,530,enfermedad)
      #Color de la letra
     c.setFillColor(black)
     # Texto
@@ -131,15 +131,15 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
      #Color de la letra
     c.setFillColor(blue)
     # Texto
-    c.drawString(140,460,'Tomar' + str(dosis) + '[mg] de' + medicamento)
+    c.drawString(170,460,'Tomar'+ ' ' + str(dosis) + ' '+ '[mg] de'+ ' '  + medicamento)
     #Color de la letra
     c.setFillColor(black)
     # Texto
-    c.drawString(50,390,"Licencia Médica:")
+    c.drawString(50,390,"Categoría Médica:")
     #Color de la letra
     c.setFillColor(blue)
     # Texto
-    c.drawString(140,390,categoria + 'por' + dias)
+    c.drawString(192,390,categoria + ' ' + 'por'+ ' ' + dias + ' ' + 'dias')
 
     #Lineas de separacion
     c.line(10,330,550,330)
