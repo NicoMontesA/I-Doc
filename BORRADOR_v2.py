@@ -262,8 +262,9 @@ class Recepcion_Sintomas(QWidget):
 			# Caso cuando el paciente se encuentra resfriado.
 			paciente = enf.Resfrio(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
 			paciente.tratamiento()
-			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo,tratamiento)
+			paciente.categoria()
 
+			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo,paciente.enfermedad,paciente.medicamento,paciente.dosis,paciente.categoria,paciente.dias)
 			QMessageBox.information(self, "Success", "Usted tiene RESFRIO, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 
 			# ===========================================================================

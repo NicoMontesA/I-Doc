@@ -131,7 +131,7 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
      #Color de la letra
     c.setFillColor(blue)
     # Texto
-    c.drawString(140,460,'Tomar' + dosis '[mg] de' + medicamento)
+    c.drawString(140,460,'Tomar' + str(dosis) + '[mg] de' + medicamento)
     #Color de la letra
     c.setFillColor(black)
     # Texto
