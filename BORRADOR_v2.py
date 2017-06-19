@@ -262,6 +262,8 @@ class Recepcion_Sintomas(QWidget):
 			# Caso cuando el paciente se encuentra resfriado.
 			paciente = enf.Resfrio(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
 			paciente.tratamiento()
+			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
+
 			QMessageBox.information(self, "Success", "Usted tiene RESFRIO, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 
 			# ===========================================================================
@@ -272,10 +274,8 @@ class Recepcion_Sintomas(QWidget):
 		elif jaqueca > resfrio and jaqueca > gastroenteritis and verificador == 0:
 			# Caso cuando el paciente se encuentra con jaqueca.
 			paciente = enf.Jaqueca(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
-
-                        Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
-
-                        paciente.tratamiento()
+			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
+			paciente.tratamiento()
 
 			QMessageBox.information(self, "Success", "Usted tiene JAQUECA, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 			print('Paciente de la clase Jaqueca')
@@ -283,7 +283,7 @@ class Recepcion_Sintomas(QWidget):
 		elif gastroenteritis > resfrio and gastroenteritis > jaqueca and verificador == 0:
 			# Caso cuando el paciente se encuentra con gastroenteritis.
 			paciente = enf.Gastroenteritis(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
-
+			Generacion_Receta(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
 			paciente.tratamiento()
 			QMessageBox.information(self, "Success", "Usted tiene GASTROENTERITIS, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
 
@@ -316,8 +316,6 @@ if __name__ == '__main__':
 
     ventana2 = Recepcion_Sintomas()
     print('\n\nSe inicio objeto ventana2\n\n')
-
-    #Generacion_Receta(a, ventana1.edad, ventana1.estatura, ventana1.peso, ventana1.sexo)
 
     sys.exit(app.exec_())
 
