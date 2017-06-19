@@ -3,7 +3,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
 import Enfermedades as enf
-
+import os
 
 
 # CLASE PARA GENERAR LA VENTANA N1: RECEPCIÓN DE DATOS.-   
@@ -132,6 +132,8 @@ class Recepcion_Sintomas(QWidget):
 		self.ingresoSintomas = QLineEdit()		# Caja para recibir los síntomas.
 
 		self.guardarSintomas = QPushButton("Guardar")	# Boton para guardar los síntomas.  
+		
+		self.retirarReceta = QPushButton("Retirar Receta")	# Boton para guardar los síntomas.  
 
 
 		
@@ -154,12 +156,18 @@ class Recepcion_Sintomas(QWidget):
 		# Elementos que componen "ingresoSintomas"
 		buttonLayout1.addWidget(self.ingresoSintomas)
 
-        	# Se crea el botón
+        	# Se crea el botón "guardarSintomas"
 		buttonLayout1.addWidget(self.guardarSintomas)
 
+		# Se crea el botón "retirarReceta"
+		buttonLayout1.addWidget(self.retirarReceta)
 
-		# ENTREGA UNA APLIACACIÓN AL BOTON "submitButton" AL SER PRESIONADO.- 
+
+		# ENTREGA UNA APLIACACIÓN AL BOTON "guadarSintomas" AL SER PRESIONADO.- 
 		self.guardarSintomas.clicked.connect(self.submitContact)
+
+		# ENTREGA UNA APLIACACIÓN AL BOTON "retirarReceta" AL SER PRESIONADO.- 
+	#	self.retirarReceta.clicked.connect(self.abrirReceta)
 
 
 		# QGridLayout() ordena los widgets con coordenadas cartesianas.
@@ -175,7 +183,7 @@ class Recepcion_Sintomas(QWidget):
 
 
 	def submitContact(self):
-		# "sintmasString" lee lo que se encuentra en la caja "self.ingresoSintomas" y lo transforma en un strng.
+		# "sintomasString" lee lo que se encuentra en la caja "self.ingresoSintomas" y lo transforma en un strng.
 		sintomasString = self.ingresoSintomas.text()
 		sintomasString = sintomasString.replace(' ','') # Solución en caso que hayan agregado un espacio entre o despues de los numeros.
 		sintomasString = sintomasString.strip(',') 	# Solución en caso que hayan comas al inicio o al final del string.
@@ -258,6 +266,7 @@ class Recepcion_Sintomas(QWidget):
 			paciente = enf.Resfrio(ventana1.nombre,ventana1.edad,ventana1.estatura,ventana1.peso,ventana1.sexo)
 			paciente.tratamiento()
 			QMessageBox.information(self, "Success", "Usted tiene RESFRIO, por favor retire su receta y siga el tratamiento indicado.\n\nFue un gusto ayudarlo!")
+
 			# ===========================================================================
 			# BORRAR ESTE Y LOS SIGUIENTES "print", ESTÁN PARA VERIFICAR QUE LA CLASE SE INICIE DE MANERA CORRECTA.
 			print('Paciente de la clase Resfrio')
@@ -285,6 +294,11 @@ class Recepcion_Sintomas(QWidget):
 
 
 
+	def abrirReceta(self):
+		# "abrirReceta()" es la función que abre la receta cuando el paciente preciona el boton "retirarReceta".
+		os.startfile('RecetaPrueba.pdf') 
+		#open('RecetaPrueba.pdf')
+	
 
 
 
