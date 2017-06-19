@@ -13,18 +13,24 @@ from reportlab.lib.units import cm
 """ Generacion_Receta es la función que crea un PDF con una receta de acuerdo a la enfermedad detectada y con los datos ingresados por el paciente"""
 
 #=======VARIABLES OBTENIDAS DESDE EL MODULO ENFERMEDADES=======
-self_nombre = "Carolina"
-self_edad = "27"
-self_estatura = "1.68"
-self_peso = "63"
-self_sexo = "F"
+
+
+#self_nombre = "Carolina"
+#self_edad = "27"
+#self_estatura = "1.68"
+#self_peso = "63"
+#self_sexo = "F"
 
 #=====NOMBRE DEL ARCHIVO PDF A CREAR Y TAMAÑO DE LA HOJA======
 
+#self_nombre = ventana1.nombre
 
-Nombre_Archivo  = "Receta" + self_nombre + ".pdf"
+Nombre_Archivo  = "Receta" + ".pdf"
 
-def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo, Nombre_Archivo):
+
+def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo):
+    'Generacion_Receta es la función que crea un PDF con una receta de acuerdo a la enfermedad detectada y con los datos ingresados por el paciente'
+
     c = canvas.Canvas(Nombre_Archivo,pagesize=letter)
     width, height = letter
 
@@ -146,4 +152,4 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
 #Guarda el archivo PDF generado
     c.save()          
 
-Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo, Nombre_Archivo)
+#Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo, Nombre_Archivo)
