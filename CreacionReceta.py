@@ -1,7 +1,9 @@
 #reportlab es la biblioteca que permite la creacion del PDF de la receta medica, de acuerdo a la enfermedad detectada
 
-import datetime
-import Enfermedades
+# MODULOS A UTILIZAR:
+# ==================
+import datetime					# Módulo empleado para obtener la fecha y hora.
+import Enfermedades				# Módulo empleado para determinar la enfermedad.
 
 from reportlab.lib.pagesizes import letter 
 from reportlab.pdfgen import canvas
@@ -26,14 +28,18 @@ from reportlab.lib.units import cm
 #self_nombre = ventana1.nombre
 
 
+# GENERACIÓN DE LA RECETA:
+# =======================
 def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo,enfermedad,medicamento,dosis,categoria,dias):
 
     'Generacion_Receta es la función que crea un PDF con una receta de acuerdo a la enfermedad detectada y con los datos ingresados por el paciente'
+
     Nombre_Archivo  = "Receta" + self_nombre + ".pdf"
     c = canvas.Canvas(Nombre_Archivo,pagesize=letter)
     width, height = letter
 
-#==========ENCABEZADO DE LA RECETA===========================
+    # ENCABEZADO DE LA RECETA.-
+    # ------------------------
 
     #Ancho de linea para todo el archivo
     c.setLineWidth(0.1 * cm)
@@ -53,12 +59,13 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
     c.line(10,705,550,705)
 
 
-#========================LOGO===============================
-
+    # UBUCACIÓN DEL LOGO.-
+    # -------------------
     c.drawImage('LogoDoc.jpg',450,610)
 
-#==================DATOS DEL PACIENTE=======================
 
+    # DATOS DEL PACIENTE.-
+    # -------------------
     # Tipo de letra y tamaño    
     c.setFont('Helvetica-Bold',16)
     # Texto y ubicacion
@@ -104,8 +111,9 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
     c.line(10,590,550,590)
     c.line(10,585,550,585)
 
-#================CONTENIDO DE LA RECETA=========================
 
+    # CONTENIDO DE LA RECETA.-
+    # -----------------------
     # Tipo de letra y tamaño 
     c.setFont('Helvetica-Bold',18)
     #Color de la letra
@@ -145,8 +153,9 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
     c.line(10,330,550,330)
     c.line(10,325,550,325)
 
-#=============FIRMA Y FECHA======================================
 
+    # FIRMA Y FECHA.-
+    # ---------------
     #Insertar fecha y hora de generacion de la receta
      #Color de la letra
     c.setFillColor(black)
@@ -171,4 +180,3 @@ def Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sex
 #Guarda el archivo PDF generado
     c.save()          
 
-#Generacion_Receta(self_nombre, self_edad, self_estatura, self_peso, self_sexo)
